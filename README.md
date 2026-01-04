@@ -1,7 +1,5 @@
 # Prerequisites: Azure CLI and a Linux environment to Create an Azure Function App.
 
-###################################################################################
-
 # What is Azure function app?
 
 An Azure Function App is a container or hosting environment for running one or more Azure Functions in the cloud. It provides the infrastructure, runtime, and configuration needed to execute your functions reliably and at scale.
@@ -25,24 +23,21 @@ o Authentication & identity settings
 • Handles scaling, monitoring, and deployment.
  
 # What is Azure Functions?
-
 Azure Functions is a serverless computing service provided by Microsoft Azure, designed to enable developers to run small pieces of code—known as functions—without managing or provisioning servers. It abstracts the infrastructure management and allows you to focus solely on writing code that performs specific tasks or handles particular events.
 Azure Functions are ideal for small apps with tasks that run independently of other websites. Common uses include sending emails, starting backups, order processing, task scheduling (like database cleanup), notifications, message handling, and IoT data processing.
-Azure Functions is a serverless solution that helps you reduce code, minimize infrastructure management, and lower costs. The cloud handles all the resources and updates, so you don’t need to manage or deploy servers, keeping your apps running smoothly.	Durable Functions: An extension of Azure Functions, Durable Functions enables you to write stateful workflows in a serverless environment. It helps manage long-running processes and complex coordination patterns.
+
+Azure Functions is a serverless solution that helps you reduce code, minimize infrastructure management, and lower costs. The cloud handles all the resources and updates, so you don’t need to manage or deploy servers, keeping your apps running smoothly.
 
 
 # Azure Functions Types:
-
 Azure Functions supports several types of triggers and bindings, which determine how and when your functions are executed. Understanding these types helps in selecting the appropriate configuration for your needs.
 
 1. HTTP Trigger:
-
 HTTP triggers are one of the most common types. They enable your function to be executed in response to HTTP requests. This is useful for creating RESTful APIs or handling webhooks.
 • Request Methods: You can configure your function to respond to different HTTP methods such as GET, POST, PUT, DELETE, etc.
 • Response Handling: The function can process the request and send responses back to the client, which might include JSON, XML, or other formats.
 
 2. Timer Trigger:
-
 Timer triggers execute functions based on a specified schedule. This is ideal for periodic tasks such as data cleanup, report generation, or other routine operations.
 
 • CRON Expressions: You can define the schedule using CRON expressions, which provide flexibility in specifying times and intervals.
@@ -50,7 +45,6 @@ Timer triggers execute functions based on a specified schedule. This is ideal fo
 • Scheduling: The function will run at the defined intervals, and you don’t need to worry about manual scheduling or maintenance.
 
 3. Queue Trigger:
-
 Queue triggers allow functions to be executed when a new message is added to an Azure Storage Queue or Azure Service Bus Queue. This is useful for background processing or task orchestration.
 
 • Message Processing: The function can process messages from the queue, perform tasks, and optionally place results into another queue or storage.
@@ -58,7 +52,6 @@ Queue triggers allow functions to be executed when a new message is added to an 
 • Concurrency: Azure Functions handles scaling and concurrency, enabling multiple messages to be processed simultaneously.
 
 4. Blob Trigger:
-
 Blob triggers activate functions in response to changes in Azure Blob Storage. This is useful for scenarios where you need to process files or data stored in blobs.
 
 • File Processing: You can automatically handle file uploads, process data, or perform transformations when a blob is created or updated.
@@ -68,7 +61,6 @@ Blob triggers activate functions in response to changes in Azure Blob Storage. T
 • Blob Pricing: Azure Blob pricing is based on the storage tier (Hot, Cool, or Archive), data volume, and access frequency. Costs include data storage, retrieval, and operations like read/write. The more optimized the tier for usage, the more cost-effective.
 
 5. Event Grid Trigger:
-
 Event Grid triggers enable functions to respond to events published to Azure Event Grid. This is suitable for integrating with various Azure services and custom event sources.
 
 • Event Handling: Functions can react to events from sources like Azure Resource Manager, custom topics, or third-party services.
@@ -76,7 +68,6 @@ Event Grid triggers enable functions to respond to events published to Azure Eve
 • Event Routing: Event Grid provides reliable event delivery and routing, allowing functions to handle events from multiple sources.
 
 6. Cosmos DB Trigger:
-
 Cosmos DB triggers activate functions in response to changes in Azure Cosmos DB, a globally distributed NoSQL database. This is ideal for scenarios where you need to process or respond to changes in your database.
 
 • Change Feed: Functions process changes in the Cosmos DB change feed, which includes inserts and updates to documents.
@@ -86,11 +77,9 @@ Cosmos DB triggers activate functions in response to changes in Azure Cosmos DB,
 Each type of trigger enables you to build a wide range of applications, from simple APIs to complex event-driven workflows, leveraging Azure Functions’ serverless capabilities.
 
 # What are some good uses for Azure Functions?
-
 Azure Functions are highly versatile and can be applied to a variety of scenarios. Here are some common and effective use cases:
 
 1. Serverless APIs:
-
 You can use Azure Functions to build RESTful APIs without managing infrastructure. Functions can handle HTTP requests, process data, and return responses, making it a cost-effective solution for API endpoints.
 
 • Scalability: Functions scale automatically with traffic, ensuring your API handles varying loads efficiently.
@@ -98,7 +87,6 @@ You can use Azure Functions to build RESTful APIs without managing infrastructur
 • Cost-Efficiency: Pay only for the execution time, reducing costs compared to traditional hosting solutions.
 
 2. Data Processing:
-
 Functions are ideal for processing data in real-time or in batch operations. This includes transforming, aggregating, or analyzing data.
 
 • Real-Time Processing: Handle data streams or events from services like Azure Event Hubs or IoT Hub.
@@ -106,7 +94,6 @@ Functions are ideal for processing data in real-time or in batch operations. Thi
 • Batch Processing: Execute periodic jobs for data cleanup, enrichment, or integration tasks.
 
 3. Background Jobs:
-
 Automate background tasks such as sending emails, generating reports, or performing scheduled maintenance.
 
 • Timer Triggers: Schedule functions to run at specific intervals for routine tasks.
@@ -114,7 +101,6 @@ Automate background tasks such as sending emails, generating reports, or perform
 • Queue Processing: Use queue triggers to handle asynchronous jobs and distribute workloads.
 
 4. File Processing:
-
 Azure Functions can process files uploaded to Azure Blob Storage, perform transformations, and move or archive files.
 
 • Blob Triggers: Automatically process files when they are added or updated in blob storage.
@@ -122,7 +108,6 @@ Azure Functions can process files uploaded to Azure Blob Storage, perform transf
 • Integration: Combine with other Azure services to build comprehensive file-processing workflows.
 
 5. Real-Time Notifications:
-
 Create real-time notifications and alerts based on events from various sources, such as changes in databases or incoming messages.
 
 • Event Grid Triggers: React to events from Azure Event Grid to send notifications or trigger actions.
@@ -130,7 +115,6 @@ Create real-time notifications and alerts based on events from various sources, 
 • Integration: Connect with messaging services or email providers to deliver notifications.
 
 6. Automation and Integration:
-
 Automate workflows and integrate with other Azure services or third-party applications.
 
 • Service Integration: Connect with services like Azure Logic Apps or Power Automate for complex workflows.
@@ -138,7 +122,6 @@ Automate workflows and integrate with other Azure services or third-party applic
 • Custom Integrations: Build custom integrations with APIs or external systems.
 
 7. DevOps and CI/CD:
-
 Implement serverless functions as part of your DevOps pipeline for automated deployment, testing, or monitoring tasks.
 
 • Deployment Automation: Use functions to automate deployment tasks or trigger builds.
@@ -196,8 +179,6 @@ Each language has its own set of features, libraries, and development tools, all
 
 Azure Function Apps is A container or host for one or more functions. It is ideal for traditional web hosting scenarios, providing greater control over resources and scaling options, while Azure Functions are designed for serverless, event-driven computing scenarios, offering dynamic scaling based on workload requirements.
 
-
-
 # Azure Functions hosting options:
 When you create a function app in Azure, you must choose a hosting option for your app. these hosting options determine how your app scales, resources available per instance, and pricing.
 Azure provides you with these hosting options for your function code:
@@ -206,12 +187,9 @@ Azure provides you with these hosting options for your function code:
 
 2. Functions Premium Plan
 
-
 3. App Service Plan
 
-
 4. Container Apps environment
-
 
 5. Consumption Plan
 
